@@ -18,7 +18,7 @@ Accurate polyp segmentation from colonoscopy images is critical for colorectal c
 
 ## Architecture
 
-![EGA-UNet Architecture](figures/architecture.png)
+![EGA-UNet Architecture](architecture.png)
 
 ## Results
 
