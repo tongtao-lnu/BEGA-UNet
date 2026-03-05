@@ -1,4 +1,4 @@
-# EGA-UNet: Edge-Guided Attention U-Net for Colonoscopic Polyp Segmentation
+# BEGA-UNet: Boundary-Explicit Guided Attention U-Net for Colonoscopic Polyp Segmentation
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.0](https://img.shields.io/badge/pytorch-2.0-red.svg)](https://pytorch.org/)
@@ -6,19 +6,27 @@
 
 Official PyTorch implementation of the paper:
 
-> **EGA-UNet: Edge-Guided Attention U-Net with Multi-Scale Feature Aggregation for Colonoscopic Polyp Segmentation**
+> **BEGA-UNet: Boundary-Explicit Guided Attention U-Net with Multi-Scale Feature Aggregation for Colonoscopic Polyp Segmentation**
 >
-> Tao Tong
+> Tao Tong, Wen Zhang, Wanni Zu*
 >
 > [Paper Link (Coming Soon)]()
 
-## Abstract
+## Highlights
 
-Accurate polyp segmentation from colonoscopy images is critical for colorectal cancer prevention. We propose EGA-UNet, a boundary-aware segmentation architecture that introduces explicit edge modeling as a structural inductive prior. The framework integrates three components: an **Edge-Guided Module (EGM)** with learnable Sobel-initialized operators, a **Dual-Path Attention (DPA)** module, and a **Multi-Scale Feature Aggregation (MSFA)** module. EGA-UNet achieves **88.53% Dice** and **82.51% IoU** on the combined benchmark, and maintains **83.2%** of in-distribution performance under cross-dataset evaluation.
+- **Explicit boundary modeling** via learnable Sobel-initialized Edge-Guided Module (EGM)
+- **83.2% cross-domain performance retention**, substantially exceeding U-Net (64.5%), Attention U-Net (47.5%), and TransUNet (53.1%)
+- **88.53% Dice** and **82.51% IoU** on combined Kvasir-SEG + CVC-ClinicDB benchmark
+- Edge features exhibit **11.7× less cross-domain divergence** than appearance-based representations
 
 ## Architecture
+BEGA-UNet integrates three complementary modules within an encoder-decoder framework:
 
-![EGA-UNet Architecture](architecture.png)
+- **Edge-Guided Module (EGM)**: Learnable Sobel-initialized operators for explicit boundary extraction
+- **Dual-Path Attention (DPA)**: Parallel channel and spatial attention to preserve boundary signals
+- **Multi-Scale Feature Aggregation (MSFA)**: Multi-scale context encoding at the bottleneck
+
+![BEGA-UNet Architecture](architecture.png)
 
 ## Results
 
@@ -38,7 +46,7 @@ Accurate polyp segmentation from colonoscopy images is critical for colorectal c
 | U-Net | 54.70 | 51.49 | 64.5% |
 | Attention U-Net | 44.59 | 35.20 | 47.5% |
 | TransUNet | 50.37 | 38.70 | 53.1% |
-| **EGA-UNet (Ours)** | **70.33** | **77.04** | **83.2%** |
+| **BEGA-UNet (Ours)** | **70.33** | **77.04** | **83.2%** |
 
 ## Installation
 
@@ -163,7 +171,7 @@ Training takes approximately 2-3 hours on a single NVIDIA RTX 4060 GPU.
 ## Project Structure
 
 ```
-EGA-UNet/
+BEGA-UNet/
 ├── models/
 │   ├── ega_unet.py          # Main model architecture
 │   ├── ablation_models.py   # Ablation study variants
@@ -202,7 +210,7 @@ If you find this work useful, please cite:
 
 ```bibtex
 @article{tong2026egaunet,
-  title={EGA-UNet: Edge-Guided Attention U-Net with Multi-Scale Feature Aggregation for Colonoscopic Polyp Segmentation},
+  title={BEGA-UNet: Boundary-Explicit Guided Attention U-Net with Multi-Scale Feature Aggregation for Colonoscopic Polyp Segmentation},
   author={Tong, Tao},
   year={2026}
 }
