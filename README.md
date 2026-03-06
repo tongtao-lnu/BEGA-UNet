@@ -37,7 +37,7 @@ BEGA-UNet integrates three complementary modules within an encoder-decoder frame
 | U-Net | 82.38 | 74.37 | 47.01 |
 | Attention U-Net | 83.95 | 75.81 | 46.66 |
 | TransUNet | 83.91 | 76.10 | 44.10 |
-| **EGA-UNet (Ours)** | **88.53** | **82.51** | **28.20** |
+| **BEGA-UNet (Ours)** | **88.53** | **82.51** | **28.20** |
 
 ### Cross-Dataset Generalization
 
@@ -61,8 +61,8 @@ BEGA-UNet integrates three complementary modules within an encoder-decoder frame
 
 ```bash
 # Clone the repository
-git clone https://github.com/tongtao-lnu/EGA-UNet.git
-cd EGA-UNet
+git clone https://github.com/tongtao-lnu/BEGA-UNet.git
+cd BEGA-UNet
 
 # Create conda environment (recommended)
 conda create -n egaunet python=3.8
