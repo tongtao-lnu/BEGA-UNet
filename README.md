@@ -10,7 +10,7 @@ Official PyTorch implementation of the paper:
 >
 > Tao Tong, Wen Zhang, Wanni Zu*
 >
-> [Paper Link https://doi.org/10.64898/2026.03.04.26347608]()
+> [https://doi.org/10.64898/2026.03.04.26347608]()
 
 ## Highlights
 
