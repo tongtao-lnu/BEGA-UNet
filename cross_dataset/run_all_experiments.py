@@ -1,6 +1,6 @@
 """
 文件名: cross_dataset/run_all_experiments.py
-功能: 一键运行所有跨数据集实验 + 生成论文图表
+功能: 生成论文图表
 """
 
 import os
