@@ -12,7 +12,7 @@ import torch.nn.functional as F
 class ConvBlock(nn.Module):
     """
     基础卷积块: Conv -> BN -> ReLU -> Conv -> BN -> ReLU
-    这是U-Net的基本构建单元
+    U-Net基本构建单元
     """
 
     def __init__(self, in_channels, out_channels):
